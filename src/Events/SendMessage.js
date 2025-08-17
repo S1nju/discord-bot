@@ -12,6 +12,10 @@ module.exports = {
         message.reply(`${messages[Math.floor(Math.random() * messages.length)]}`);
 
     }
+         if(message.content.toLowerCase()=='diroulna mep') {
+        message.reply(`dok ndirholek`);
+
+    }
 
 
     },

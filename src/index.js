@@ -3,7 +3,7 @@ const {Client, IntentsBitField,Partials, PermissionFlagsBits} = require('discord
 require('dotenv').config();
 const eventHandler = require('./Handlers/eventHandler');
 const  AntiSpam  = require('discord-anti-spam');
-
+const app = require('express')();
 const client = new Client({disableEveryone: false,
   intents: [
     IntentsBitField.Flags.Guilds,
@@ -33,6 +33,14 @@ eventHandler(client);
 client.on('messageCreate', (message) => {
    antiSpam.message(message);
 });
+const port = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+  res.send('Bot is running');
+});
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
 client.login(process.env.BOT_TOKEN)
 
 

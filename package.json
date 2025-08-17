@@ -13,6 +13,7 @@
     "chalk": "^4.1.0",
     "discord-anti-spam": "^2.8.1",
     "discord.js": "^14.21.0",
-    "dotenv": "^17.2.1"
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
   }
 }
